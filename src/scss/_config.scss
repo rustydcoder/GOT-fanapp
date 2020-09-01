@@ -1,0 +1,24 @@
+$pri-light: #dae0e5;
+$sec-light: #adb5bd;
+
+@mixin fluid-typography($minFont, $maxFont, $minBkp, $maxBkp) {
+  $avgFont: ($minFont + $maxFont) / 2;
+  font-size: #{$minFont}px;
+  @media (min-width: #{$minBkp}px) and (max-width: #{$maxBkp - 1}px) {
+    font-size: #{$avgFont}px;
+    font-size: calc(
+      #{$minFont}px + (#{$maxFont} - #{$minFont}) * (100vw - #{$minBkp}px) /
+        (#{$maxBkp} - #{$minBkp})
+    );
+  }
+  @media (min-width: #{$maxBkp}px) {
+    font-size: #{$maxFont}px;
+  }
+}
+
+@mixin transition {
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}

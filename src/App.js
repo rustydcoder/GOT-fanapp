@@ -1,10 +1,16 @@
 import React from 'react';
-import './App.css';
+import './scss/main.scss';
+import Logo from './containers/Logo';
+import Home from './containers/Home';
+import FooterNav from './containers/FooterNav';
+
 
 function App() {
   return (
-    <div className="App">
-
+    <div className="wrapper text-center">
+      <Logo />
+      <Home />
+      <FooterNav />
     </div>
   );
 }

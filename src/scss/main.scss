@@ -1,0 +1,40 @@
+@import "./config";
+@import "./home";
+
+// bootstrap reset
+.btn {
+  &.btn-primary {
+    @include transition;
+    background-color: #0062cc;
+    margin-top: 1rem;
+    &:hover {
+      background-color: transparent;
+      border-color: #0062cc;
+    }
+    &:focus {
+      box-shadow: none;
+      border: 1px solid transparent;
+    }
+    &:active {
+      border: none;
+    }
+  }
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}
+
+/*=====================================
+   NAVBAR AND FOOTER
+=====================================*/
+.navbar-dark {
+  background-color: rgba(0, 0, 0, 0.78);
+}
+
+.navbar-brand__logo {
+  width: 60px;
+}
+
+.footer {
+  padding: 1rem;
+}

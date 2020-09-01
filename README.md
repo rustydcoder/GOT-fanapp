@@ -8,7 +8,7 @@ This is a game of thrones fan page app built with Facebook's REACT. Built on a 3
 
 ### API
 
-- [HOMEPAGE](http://api.tvmaze.com/82)
+- [HOMEPAGE](http://api.tvmaze.com/shows/82)
 
 - [SEASONS](http://api.tvmaze.com/82/seasons)
 
