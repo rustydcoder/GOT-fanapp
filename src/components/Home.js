@@ -20,30 +20,40 @@ class Home extends Component {
       currentIndex: 2
    }
 
-   randomizeIndex() {
+   autoIndex() {
       this.setState(state => {
          state.currentIndex -= 1
-         console.log(state)
+         if (state.currentIndex < 0) {
+            state.currentIndex = 2
+         }
+
+         return {
+            currentIndex: state.currentIndex
+         }
       })
    }
 
    componentDidMount() {
-      const intervalId = setInterval(() => this.randomizeIndex(), 2000);
+      const intervalId = setInterval(() => this.autoIndex(), 8000);
       this.setState({ intervalId })
    }
 
    render() {
+      const { quotes, currentIndex } = this.state
+
       return (
 
-         <header className='header-bg header'>
+         <header className='header got-bg'>
             <div className='overlay'>
                <div className='description'>
                   <img className='description-img' src={GotFont} alt='got-font' />
                   <div className="card description-card">
                      <div className="card-body">
                         <blockquote className="blockquote">
-                           <p className='quote'>  </p>
-                           <footer className="card-blockquote blockquote-footer"><cite title="Source title">  </cite></footer>
+                           <p className='quote'> {quotes[currentIndex].text} </p>
+                           <footer className="card-blockquote blockquote-footer">
+                              <cite title="Source title"> {quotes[currentIndex].by} </cite>
+                           </footer>
                         </blockquote>
                      </div>
                   </div>

@@ -1,5 +1,5 @@
-import React from 'react'
-import LogoSrc from '../images/logo-brand.png'
+import React from 'react';
+import LogoSrc from '../images/logo-brand.png';
 
 const Logo = () => (
    <nav className="navbar fixed-top navbar-dark justify-content-center">

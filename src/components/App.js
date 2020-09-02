@@ -1,15 +1,15 @@
 import React from 'react';
-import './scss/main.scss';
-import Logo from './containers/Logo';
-import Home from './containers/Home';
-import FooterNav from './containers/FooterNav';
+import '../scss/main.scss';
+import Logo from '../containers/Logo';
+import Main from '../containers/Main';
+import FooterNav from '../containers/FooterNav';
 
 
 function App() {
   return (
     <div className="wrapper text-center">
       <Logo />
-      <Home />
+      <Main />
       <FooterNav />
     </div>
   );

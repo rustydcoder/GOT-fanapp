@@ -16,12 +16,12 @@
       border: 1px solid transparent;
     }
     &:active {
-      border: none;
+      border: 1px solid transparent;
+    }
+    &:not(:disabled):not(.disabled):active:focus {
+      box-shadow: none;
     }
   }
-}
-.btn-primary:not(:disabled):not(.disabled):active:focus {
-  box-shadow: none;
 }
 
 /*=====================================
@@ -37,4 +37,12 @@
 
 .footer {
   padding: 1rem;
+}
+
+.got-bg {
+  background-image: url("../images/hero.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
