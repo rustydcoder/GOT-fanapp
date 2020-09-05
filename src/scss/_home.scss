@@ -22,18 +22,34 @@
     border: none;
     width: 450px;
     height: 150px;
-    margin: -2rem auto 0;
+    margin: -1.5rem auto 0;
+    &-body {
+      padding: 0;
+    }
   }
 }
 
 .blockquote {
   color: $pri-light;
-  &-footer {
-    color: $sec-light;
-    text-align: right;
+  .quote-icon {
+    font-size: 0.9rem;
   }
   .quote {
     margin-bottom: 0;
-    text-align: left;
+    position: absolute;
+  }
+  &-footer {
+    color: $sec-light;
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%, 0);
+    &::before {
+      content: "" !important;
+    }
+    cite {
+      display: block;
+    }
   }
 }
