@@ -1,5 +1,6 @@
 @import "./config";
 @import "./home";
+@import "./cast";
 
 // bootstrap reset
 .btn {
@@ -49,4 +50,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+main{
+  height: 100vh;
+  width: 100vw;
 }
