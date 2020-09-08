@@ -1,7 +1,10 @@
 import React from "react";
 
 export const CastDetails = (props) => {
-  const { age, cast, name, nationality, close } = props;
+  const {
+    details: { age, cast, name, nationality },
+    close,
+  } = props;
 
   return (
     <div className="cast-card__active">
