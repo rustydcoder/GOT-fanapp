@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { EachCast } from "./EachCast";
+import _ from "lodash";
 
 export class CastCard extends Component {
   state = {
@@ -33,12 +34,14 @@ export class CastCard extends Component {
           .join()
       );
 
+    const pattern = /lady|prince|queen|"littlefinger"|lord|ser|king|commander/gi;
+
     return {
       id,
       name,
       nationality,
       age: `${birthYear(birthday)} years old`,
-      cast,
+      cast: _.replace(cast, pattern, ""),
       src,
     };
   }
