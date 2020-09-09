@@ -6,61 +6,171 @@
 
 .cast-card {
   text-align: center;
-  display: flex !important;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 215px !important;
   position: relative;
+  margin: 0 auto;
+
+  &:focus {
+    outline: none;
+  }
+
+  &__img {
+    overflow: hidden;
+  }
 
   &__name {
     background: $pri-light;
     position: absolute;
-    left: 64px;
+    left: -10px;
     padding: 0.5rem 1rem;
     text-align: left;
     margin: 0;
     z-index: 10;
     color: #222;
-    width: 260px;
-    bottom: 0;
+    width: 100%;
+    top: calc(100% - 54px);
+    border-radius: 0 16px 0 0;
+    @include transition;
 
     span {
       display: block;
     }
 
-    &::before {
-      content: " ";
+    &::before,
+    &::after {
+      content: "";
       position: absolute;
       left: 0;
-      top: -16px;
+      top: -10px;
       width: 0;
-      border: 8px solid;
+      border: 5px solid;
+    }
+
+    &::before {
       border-top-color: transparent;
       border-right-color: $sec-light;
       border-bottom-color: $sec-light;
       border-left-color: transparent;
     }
+
+    &::after {
+      border-top-color: $pri-light;
+      border-right-color: $pri-light;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      bottom: 0;
+      top: auto;
+    }
+
+    &.cast-card__details {
+      top: 0;
+      border-radius: 0 0 16px 0;
+
+      &::before {
+        border-top-color: transparent;
+        border-right-color: $pri-light;
+        border-bottom-color: $pri-light;
+        border-left-color: transparent;
+        top: 0;
+      }
+
+      &::after {
+        border-top-color: $sec-light;
+        border-right-color: $sec-light;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        bottom: -10px;
+      }
+    }
   }
 
-  &__btn {
+  &__icon {
+    width: 20px;
+    height: 16px;
     position: absolute;
-    background: $sec-light;
-    top: 0.5rem;
-    right: 5.5rem;
-    border-radius: 50%;
-    height: 35px;
-    width: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 4px solid $pri-light;
+    margin: 0px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    @include transition;
     cursor: pointer;
-    z-index: 20;
+    z-index: 30;
+    top: 8px;
+    right: 12px;
+
+    span {
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: #d3531a;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      @include transition;
+
+      &:nth-child(1) {
+        top: 0px;
+      }
+
+      &:nth-child(2) {
+        top: 5px;
+      }
+
+      &:nth-child(3) {
+        top: 10px;
+      }
+    }
+
+    &.open {
+      z-index: 30;
+
+      span:nth-child(1) {
+        top: 18px;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+      }
+
+      span:nth-child(3) {
+        top: 18px;
+        -webkit-transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  &__active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    z-index: 5;
     color: #fff;
-    &:hover {
-      text-decoration: none;
-      color: #fff;
+    @include transition;
+    padding: 70px 0 0 15px;
+    width: 210px;
+
+    ul {
+      margin: 0;
+      text-align: left;
+      padding: 0;
+      list-style: none;
     }
   }
 }

@@ -1,6 +1,6 @@
 # FANPAGE APP
 
-This is a game of thrones fan page app built with Facebook's REACT. Built on a 3rd party API.
+This is a game of thrones fan page app built with Facebook's REACT. Built on a 3rd party API [TVMAZE](http://tvmaze.com).
 
 ## RESOURCES
 

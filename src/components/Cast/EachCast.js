@@ -16,32 +16,60 @@ export const EachCast = (props) => {
     dots: false,
     infinite: true,
     speed: 1000,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 4,
+    slidesToScroll: 2,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 578,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const item = casts.map((cast) => (
     <div key={cast.id} className="cast-card">
       <img src={cast.src} alt={cast.cast} className="cast-card__img" />
-      <h6 className="cast-card__name">
+      <h6
+        className={`cast-card__name ${
+          show === cast.id ? "cast-card__details" : ""
+        }`}
+      >
         <span>{cast.cast}</span>
         <strong>{cast.name}</strong>
       </h6>
-      <a
-        name="castButton"
-        onClick={() => OpenDetails(cast.id)}
-        className="cast-card__btn"
-        href="#d"
-        role="button"
+
+      <div
+        onClick={() =>
+          show === cast.id ? CloseDetails() : OpenDetails(cast.id)
+        }
+        className={`cast-card__icon ${show === cast.id ? "open" : ""}`}
       >
-        <i className="fa fa-bars" aria-hidden="true"></i>
-      </a>
-      {show === cast.id ? (
-        <CastDetails
-          close={CloseDetails}
-          details={_.find(casts, { id: cast.id })}
-        />
-      ) : null}
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      {show === cast.id && (
+        <CastDetails details={_.find(casts, { id: cast.id })} />
+      )}
     </div>
   ));
 

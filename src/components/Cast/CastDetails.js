@@ -1,30 +1,22 @@
 import React from "react";
+import { Transition, animated } from "react-spring/renderprops";
 
-export const CastDetails = (props) => {
-  const {
-    details: { age, cast, name, nationality },
-    close,
-  } = props;
-
+export const CastDetails = ({ details }) => {
   return (
-    <div className="cast-card__active">
-      <h4>More Info</h4>
-      <ul>
-        <li>Name: {name}</li>
-        <li>Cast: {cast}</li>
-        <li>Age: {age}</li>
-        <li>Nationality: {nationality}</li>
-      </ul>
-
-      <a
-        name="castButton"
-        onClick={close}
-        className="cast-card__btn"
-        href="#d"
-        role="button"
-      >
-        <i className="fa fa-times" aria-hidden="true"></i>
-      </a>
-    </div>
+    <Transition
+      items={details}
+      from={{ opacity: 0, transform: "translate(0, 100%)" }}
+      enter={{ opacity: 1, transform: "translate(0, 0%)" }}
+      leave={{ opacity: 0, transform: "translate(0, -50%)" }}
+    >
+      {(item) => (style) => (
+        <animated.div style={style} className="cast-card__active">
+          <ul>
+            <li>Age: {item.age}</li>
+            <li>Nationality: {item.nationality}</li>
+          </ul>
+        </animated.div>
+      )}
+    </Transition>
   );
 };
