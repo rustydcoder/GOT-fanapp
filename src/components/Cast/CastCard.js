@@ -6,10 +6,27 @@ import _ from "lodash";
 export class CastCard extends Component {
   state = {
     castInfo: [],
-    toggleDetail: false,
   };
 
-  formatData(data) {
+  CancelToken = axios.CancelToken;
+  source = this.CancelToken.source();
+  abortController = new AbortController();
+
+  fetchData = async () => {
+    try {
+      let result = await axios.get("http://api.tvmaze.com/shows/82/cast", {
+        cancelToken: this.source.token,
+      });
+      return result.data;
+    } catch (error) {
+      if (axios.isCancel(error)) {
+        console.log("Request unsuccessful", error.message);
+        throw new Error("Cancelled");
+      }
+    }
+  };
+
+  formatData = (data) => {
     const {
       person: {
         id,
@@ -44,16 +61,19 @@ export class CastCard extends Component {
       cast: _.replace(cast, pattern, ""),
       src,
     };
-  }
+  };
 
   componentDidMount() {
-    axios
-      .get("http://api.tvmaze.com/shows/82/cast")
-      .then(({ data }) => {
+    this.fetchData()
+      .then((data) => {
         const formattedData = data.map((data) => this.formatData(data));
         this.setState({ castInfo: [...formattedData] });
       })
       .catch((err) => console.log(err));
+  }
+
+  componentWillUnmount() {
+    this.source.cancel("Request cancelled");
   }
 
   render() {
