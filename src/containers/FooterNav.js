@@ -6,7 +6,7 @@ const FooterNav = () => (
    <footer className='footer fixed-bottom'>
       <ul className='nav justify-content-center'>
          <li className='nav-item'>
-            <NavLink className='nav-link' activeClassName='nav-link__active' to='/cast'>
+            <NavLink className='nav-link' activeClassName='nav-link__active' to='/casts'>
                Cast
             </NavLink>
          </li>

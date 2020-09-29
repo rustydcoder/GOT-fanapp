@@ -1,0 +1,35 @@
+.season {
+  overflow-y: scroll;
+  padding: 6.5rem 0;
+
+  &-card {
+    margin: 0.5rem 0;
+
+    &__body {
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.68);
+    }
+
+    &__btn {
+      position: absolute;
+      top: 0;
+      right: 16px;
+      border-radius: 50%;
+    }
+  }
+
+  &-info span {
+    display: block;
+  }
+}
+
+.modal_container {
+  position: fixed;
+  background: #111;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3rem;
+  border-radius: 12px;
+}

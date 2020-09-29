@@ -39,6 +39,11 @@ class Home extends Component {
       this.setState({ intervalId })
    }
 
+   componentWillUnmount() {
+      const interval = this.state.intervalId
+      clearInterval(interval)
+   }
+
    render() {
       const { quotes, currentIndex } = this.state;
 
