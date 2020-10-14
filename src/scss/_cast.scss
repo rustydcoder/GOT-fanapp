@@ -41,4 +41,26 @@
       border-left-color: transparent;
     }
   }
+
+  &__btn {
+    position: absolute;
+    background: $sec-light;
+    top: 0.5rem;
+    right: 5.5rem;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 4px solid $pri-light;
+    cursor: pointer;
+    z-index: 20;
+    color: #fff;
+    &:hover {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
 }

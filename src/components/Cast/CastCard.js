@@ -5,11 +5,13 @@ import { EachCast } from "./EachCast";
 export class CastCard extends Component {
   state = {
     castInfo: [],
+    toggleDetail: false,
   };
 
   formatData(data) {
     const {
       person: {
+        id,
         name,
         birthday,
         country: { name: nationality },
@@ -32,6 +34,7 @@ export class CastCard extends Component {
       );
 
     return {
+      id,
       name,
       nationality,
       age: `${birthYear(birthday)} years old`,

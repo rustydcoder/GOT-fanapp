@@ -10,18 +10,25 @@ export const EachCast = (props) => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 3,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    focusOnSelect: true,
   };
 
-  const item = casts.map((cast, i) => (
-    <div key={i} className="cast-card">
+  const item = casts.map((cast) => (
+    <div key={cast.id} className="cast-card">
       <img src={cast.src} alt={cast.cast} className="cast-card__img" />
       <h6 className="cast-card__name">
         <span>{cast.cast}</span>
         <strong>{cast.name}</strong>
       </h6>
+      <a name="castButton" className="cast-card__btn" href="#d" role="button">
+        <i className="fa fa-bars" aria-hidden="true"></i>
+      </a>
     </div>
   ));
 
