@@ -1,5 +1,4 @@
 .season {
-  overflow-y: scroll;
   padding: 6.5rem 0;
 
   &-card {
@@ -23,13 +22,36 @@
   }
 }
 
-.modal_container {
+.seasons {
+  overflow-y: auto;
+}
+
+.season-modal{
   position: fixed;
-  background: #111;
-  z-index: 99;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 3rem;
-  border-radius: 12px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+  overflow: hidden;
+
+  &_overlay{
+    background: rgba(0,0,0,.5);
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+  }
+
+  &_content {
+    position: absolute;
+    background: #111;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2.75rem;
+    border-radius: 12px;
+    overflow-y: auto;
+    height: 350px;
+  }
 }

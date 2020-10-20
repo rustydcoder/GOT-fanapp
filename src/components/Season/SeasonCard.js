@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Summary } from "./Summary";
+import Modal from "./Modal";
 
 export class SeasonCard extends Component {
   state = {
@@ -75,7 +76,10 @@ export class SeasonCard extends Component {
             const summary = item.summary.replace(/<?\Wp>/g, "");
 
             return (
-              <div key={item.id} className="season-card col-md-3 col-sm-6">
+              <div
+                key={item.id}
+                className="season-card col-lg-3 col-md-4 col-6"
+              >
                 <div className="card bg-dark text-white">
                   <img
                     className="card-img-top img-fluid"
@@ -97,24 +101,18 @@ export class SeasonCard extends Component {
                       >
                         More
                       </button>
-
-                      {this.state.modalId === item.id && (
-                        <div className="modal_container">
-                          <Summary
-                            episodes={item.episodeOrder}
-                            summary={summary}
-                          />
-                          <button
-                            className="btn btn-primary season-card__btn"
-                            onClick={this.closeModal}
-                          >
-                            <i className="fa fa-times" aria-hidden="true"></i>
-                          </button>
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>
+                {this.state.modalId === item.id && (
+                  <Modal close={this.closeModal}>
+                    <Summary
+                      episodes={item.episodeOrder}
+                      summary={summary}
+                      number={item.number}
+                    />
+                  </Modal>
+                )}
               </div>
             );
           })}
