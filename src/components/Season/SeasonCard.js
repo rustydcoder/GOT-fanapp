@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Summary } from "./Summary";
 import Modal from "./Modal";
+import { Link } from "react-router-dom";
 
 export class SeasonCard extends Component {
   state = {
@@ -95,12 +96,13 @@ export class SeasonCard extends Component {
                         </span>
                         <span>Ended: {item.endDate.substring(0, 7)}</span>
                       </div>
-                      <button
+                      <Link
+                        to={`/seasons/${item.number}`}
                         className="btn btn-primary"
                         onClick={() => this.activeModal(item.id)}
                       >
                         More
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
