@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { EachCast } from "./EachCast";
 import _ from "lodash";
+import Loader from "../Loader";
 
 export class CastCard extends Component {
   state = {
@@ -79,6 +80,8 @@ export class CastCard extends Component {
   render() {
     const { castInfo } = this.state;
 
-    return <EachCast casts={castInfo} />;
+    return castInfo == false ? <Loader /> :
+      <EachCast casts={castInfo} />;
+
   }
 }
