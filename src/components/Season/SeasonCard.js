@@ -73,59 +73,57 @@ export class SeasonCard extends Component {
   render() {
     return (
       <div className="season">
-        {
-          this.state.season == false ? <Loader /> : (
-            <div className="row">
-              {this.state.season.map((item) => {
-                const summary = item.summary.replace(/<?\Wp>/g, "");
+        {this.state.season == false ? (
+          <Loader />
+        ) : (
+          <div className="row">
+            {this.state.season.map((item) => {
+              const summary = item.summary.replace(/<?\Wp>/g, "");
 
-                return (
-                  <div
-                    key={item.id}
-                    className="season-card col-lg-3 col-md-4 col-6"
-                    >
-                    <div className="card bg-dark text-white">
-                      <img
-                        className="card-img-top img-fluid"
-                        src={item.imgSrc}
-                        alt={`Season ${item.number}`}
-                        />
+              return (
+                <div
+                  key={item.id}
+                  className="season-card col-lg-3 col-md-4 col-6"
+                >
+                  <div className="card bg-dark text-white">
+                    <img
+                      className="card-img-top img-fluid"
+                      src={item.imgSrc}
+                      alt={`Season ${item.number}`}
+                    />
 
-                      <div className="season-card__body">
-                        <div className="card-body">
-                          <div className="season-info">
-                            <span>
-                              Premiered: {item.premiereDate.substring(0, 7)}
-                            </span>
-                            <span>Ended: {item.endDate.substring(0, 7)}</span>
-                          </div>
-                          <Link
-                            to={`/seasons/${item.number}`}
-                            className="btn btn-primary"
-                            onClick={() => this.activeModal(item.id)}
-                            >
-                            More
-                          </Link>
+                    <div className="season-card__body">
+                      <div className="card-body">
+                        <div className="season-info">
+                          <span>
+                            Premiered: {item.premiereDate.substring(0, 7)}
+                          </span>
+                          <span>Ended: {item.endDate.substring(0, 7)}</span>
                         </div>
+                        <Link
+                          to={`/seasons/${item.number}`}
+                          className="btn btn-primary"
+                          onClick={() => this.activeModal(item.id)}
+                        >
+                          More
+                        </Link>
                       </div>
                     </div>
-                    {this.state.modalId === item.id && (
-                      <Modal close={this.closeModal}>
-                        <Summary
-                          episodes={item.episodeOrder}
-                          summary={summary}
-                          number={item.number}
-                          />
-                      </Modal>
-                    )}
                   </div>
-                );
-              })}
-            </div>
-
-          )
-        }
-
+                  {this.state.modalId === item.id && (
+                    <Modal close={this.closeModal}>
+                      <Summary
+                        episodes={item.episodeOrder}
+                        summary={summary}
+                        number={item.number}
+                      />
+                    </Modal>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     );
   }

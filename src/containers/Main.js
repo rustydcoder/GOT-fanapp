@@ -15,7 +15,7 @@ const Main = (props) => (
     <Redirect from="/season" to="/seasons" />
     <Route path="/:season/episode1" component={Episode} />
     <Redirect from="/:season/episodes" to="/:season/episode1" />
-    <Route path="/:season/:ep" component={Episode}/>
+    <Route path="/:season/:ep" component={Episode} />
     <Route component={NoMatch} />
   </Switch>
 );

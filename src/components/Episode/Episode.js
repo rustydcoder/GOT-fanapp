@@ -6,13 +6,12 @@ import EpisodeCard from "./EpisodeCard";
 import Loader from "../Loader";
 
 const Episode = (props) => {
-
   const [episode, setEpisode] = useState(null);
   let { season, ep } = useParams();
   let number = parseInt(season.match(/\d+/g).join());
   let epNum = ep && parseInt(ep.match(/\d+/g).join());
-  let { url } = useRouteMatch()
-  let path = `/season${number}/episode${epNum}`
+  let { url } = useRouteMatch();
+  let path = `/season${number}/episode${epNum}`;
   const matchedPath = url === path || !ep ? true : false;
 
   useEffect(() => {
@@ -44,9 +43,9 @@ const Episode = (props) => {
 
   return (
     <div>
-      {matchedPath ?
+      {matchedPath ? (
         <main className="got-bg episode">
-          { episode === null ? (
+          {episode === null ? (
             <Loader />
           ) : (
             <div>
@@ -59,10 +58,10 @@ const Episode = (props) => {
               <EpisodeCard episode={episode} />
             </div>
           )}
-        </main> :
-        <Redirect from={url} to='/404' />
-      }
-
+        </main>
+      ) : (
+        <Redirect from={url} to="/404" />
+      )}
     </div>
   );
 };
