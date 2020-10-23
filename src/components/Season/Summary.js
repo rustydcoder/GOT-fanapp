@@ -6,7 +6,7 @@ export const Summary = (props) => {
 
   return (
       <div className="text-center">
-        <div className="p-2">
+        <div className="p-2 text-white">
           <p>{summary ? summary : "No Storyline"}</p>
           <Link
             to={`/season${number}/episodes`}

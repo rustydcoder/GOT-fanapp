@@ -8,13 +8,6 @@
       padding: 1rem;
       background: rgba(0, 0, 0, 0.68);
     }
-
-    &__btn {
-      position: absolute;
-      top: 0;
-      right: 16px;
-      border-radius: 50%;
-    }
   }
 
   &-info span {
@@ -22,8 +15,17 @@
   }
 }
 
+
 .seasons {
   overflow-y: auto;
+}
+
+button.btn.btn-primary.season-card__btn {
+    border-radius: 50%;
+    position: absolute;
+    top: 26%;
+    left: 20%;
+    z-index: 999;
 }
 
 .season-modal{
@@ -49,7 +51,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 2.75rem;
+    padding: 1.5rem;
     border-radius: 12px;
     overflow-y: auto;
     height: 350px;

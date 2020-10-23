@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import _ from "lodash";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import EpisodeCard from "./EpisodeCard";
+import Loader from "../../Loader";
 
 const Episode = (props) => {
   const [episode, setEpisode] = useState(null);
-  let {id} = useParams()
-  let number = parseInt(id.match(/\d/g).join())
+  let { id } = useParams();
+  let number = parseInt(id.match(/\d/g).join());
 
   useEffect(() => {
     const CancelToken = axios.CancelToken;
@@ -33,12 +35,24 @@ const Episode = (props) => {
     return () => {
       source.cancel();
     };
-  }, []);
+  }, [number]);
 
   return (
-    <div className="episode">
-      {episode === null ? "Loading..." : <div>{episode[0].name}</div>}
-    </div>
+    <main className="got-bg episode">
+      {episode === null ? (
+        <Loader />
+      ) : (
+        <div>
+          <div className="text-left m-4">
+            <Link to="/seasons" className="btn btn-primary back-btn">
+              Back
+            </Link>
+          </div>
+
+          <EpisodeCard episode={episode} />
+        </div>
+      )}
+    </main>
   );
 };
 
