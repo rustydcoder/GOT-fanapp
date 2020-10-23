@@ -7,8 +7,8 @@ import Loader from "../../Loader";
 
 const Episode = (props) => {
   const [episode, setEpisode] = useState(null);
-  let { id } = useParams();
-  let number = parseInt(id.match(/\d/g).join());
+  let { season } = useParams();
+  let number = parseInt(season.match(/\d/g).join());
 
   useEffect(() => {
     const CancelToken = axios.CancelToken;
