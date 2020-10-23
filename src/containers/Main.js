@@ -4,6 +4,7 @@ import Home from "../components/Home/Home";
 import Cast from "../components/Cast/Cast";
 import Season from "../components/Season/Season";
 import Episode from "../components/Episode/Episode";
+import NoMatch from "../components/NoMatch";
 
 const Main = (props) => (
   <Switch>
@@ -12,9 +13,10 @@ const Main = (props) => (
     <Route path="/casts" component={Cast} />
     <Route path="/seasons" component={Season} />
     <Redirect from="/season" to="/seasons" />
-    <Route path="/:season/:episode" component={Episode}/>
     <Route path="/:season/episode1" component={Episode} />
-    <Redirect from="/:season/episodes" to="/:id/episode1" />
+    <Redirect from="/:season/episodes" to="/:season/episode1" />
+    <Route path="/:season/:ep" component={Episode}/>
+    <Route component={NoMatch} />
   </Switch>
 );
 

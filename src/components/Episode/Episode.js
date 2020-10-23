@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import _ from "lodash";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useRouteMatch, Redirect } from "react-router-dom";
 import EpisodeCard from "./EpisodeCard";
-import Loader from "../../Loader";
+import Loader from "../Loader";
 
 const Episode = (props) => {
+
   const [episode, setEpisode] = useState(null);
-  let { season } = useParams();
-  let number = parseInt(season.match(/\d/g).join());
+  let { season, ep } = useParams();
+  let number = parseInt(season.match(/\d+/g).join());
+  let epNum = ep && parseInt(ep.match(/\d+/g).join());
+  let { url } = useRouteMatch()
+  let path = `/season${number}/episode${epNum}`
+  const matchedPath = url === path || !ep ? true : false;
 
   useEffect(() => {
     const CancelToken = axios.CancelToken;
@@ -38,21 +43,27 @@ const Episode = (props) => {
   }, [number]);
 
   return (
-    <main className="got-bg episode">
-      {episode === null ? (
-        <Loader />
-      ) : (
-        <div>
-          <div className="text-left m-4">
-            <Link to="/seasons" className="btn btn-primary back-btn">
-              Back
-            </Link>
-          </div>
+    <div>
+      {matchedPath ?
+        <main className="got-bg episode">
+          { episode === null ? (
+            <Loader />
+          ) : (
+            <div>
+              <div className="text-left m-4">
+                <Link to="/seasons" className="btn btn-primary back-btn">
+                  Back
+                </Link>
+              </div>
 
-          <EpisodeCard episode={episode} />
-        </div>
-      )}
-    </main>
+              <EpisodeCard episode={episode} />
+            </div>
+          )}
+        </main> :
+        <Redirect from={url} to='/404' />
+      }
+
+    </div>
   );
 };
 
