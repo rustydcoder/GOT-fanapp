@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/GOT-fanapp/precache-manifest.bb2b5f4e5cf993da91cc03a1b1eda8a9.js"
+  "/GOT-fanapp/precache-manifest.2e463e969873c4a809f78780dd0a6c5a.js"
 );
 
 self.addEventListener('message', (event) => {
