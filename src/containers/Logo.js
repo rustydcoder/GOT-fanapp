@@ -1,11 +1,12 @@
 import React from "react";
 import LogoSrc from "../images/logo-brand.png";
+import {Link} from "react-router-dom";
 
 const Logo = () => (
   <nav className="navbar fixed-top navbar-dark justify-content-center">
-    <a href="#index" className="navbar-brand">
+    <Link to="/" className="navbar-brand">
       <img className="navbar-brand__logo" alt="Logo" src={LogoSrc} />
-    </a>
+    </Link>
   </nav>
 );
 
