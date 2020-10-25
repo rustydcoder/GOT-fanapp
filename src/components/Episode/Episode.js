@@ -15,6 +15,7 @@ const Episode = (props) => {
   const matchedPath = url === path || !ep ? true : false;
 
   useEffect(() => {
+    document.title = `GOT - S${number} E${epNum || 1}`;
     const CancelToken = axios.CancelToken;
     const source = CancelToken.source();
 
