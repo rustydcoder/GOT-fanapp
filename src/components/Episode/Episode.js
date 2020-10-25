@@ -40,7 +40,7 @@ const Episode = (props) => {
     return () => {
       source.cancel();
     };
-  }, [number]);
+  }, [number, epNum]);
 
   return (
     <div>
