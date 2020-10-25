@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b758d8101d0527811b552b95b5d6fd9d",
+    "revision": "ffc29d01e247408f74a6c5d4af7cfda0",
     "url": "/GOT-fanapp/index.html"
   },
   {
-    "revision": "f711ed41c58e242b7d80",
+    "revision": "2a53ecbe238f9801bd88",
     "url": "/GOT-fanapp/static/css/2.616f65ab.chunk.css"
   },
   {
-    "revision": "bd97f9fab993060a46c4",
+    "revision": "39d363c2c7e17e46b6d1",
     "url": "/GOT-fanapp/static/css/main.e84ff4c6.chunk.css"
   },
   {
-    "revision": "f711ed41c58e242b7d80",
-    "url": "/GOT-fanapp/static/js/2.d337a102.chunk.js"
+    "revision": "2a53ecbe238f9801bd88",
+    "url": "/GOT-fanapp/static/js/2.a25b1942.chunk.js"
   },
   {
     "revision": "117d65892edc8adcd29d4a0d57b5a80a",
-    "url": "/GOT-fanapp/static/js/2.d337a102.chunk.js.LICENSE.txt"
+    "url": "/GOT-fanapp/static/js/2.a25b1942.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bd97f9fab993060a46c4",
-    "url": "/GOT-fanapp/static/js/main.30087e14.chunk.js"
+    "revision": "39d363c2c7e17e46b6d1",
+    "url": "/GOT-fanapp/static/js/main.c014e52b.chunk.js"
   },
   {
     "revision": "ab145f766626b85645b5",

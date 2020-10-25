@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/GOT-fanapp/static/css/main.e84ff4c6.chunk.css",
-    "main.js": "/GOT-fanapp/static/js/main.30087e14.chunk.js",
-    "main.js.map": "/GOT-fanapp/static/js/main.30087e14.chunk.js.map",
+    "main.js": "/GOT-fanapp/static/js/main.c014e52b.chunk.js",
+    "main.js.map": "/GOT-fanapp/static/js/main.c014e52b.chunk.js.map",
     "runtime-main.js": "/GOT-fanapp/static/js/runtime-main.a851b28a.js",
     "runtime-main.js.map": "/GOT-fanapp/static/js/runtime-main.a851b28a.js.map",
     "static/css/2.616f65ab.chunk.css": "/GOT-fanapp/static/css/2.616f65ab.chunk.css",
-    "static/js/2.d337a102.chunk.js": "/GOT-fanapp/static/js/2.d337a102.chunk.js",
-    "static/js/2.d337a102.chunk.js.map": "/GOT-fanapp/static/js/2.d337a102.chunk.js.map",
+    "static/js/2.a25b1942.chunk.js": "/GOT-fanapp/static/js/2.a25b1942.chunk.js",
+    "static/js/2.a25b1942.chunk.js.map": "/GOT-fanapp/static/js/2.a25b1942.chunk.js.map",
     "index.html": "/GOT-fanapp/index.html",
-    "precache-manifest.985a9e947e2f7b07313349c867af6b02.js": "/GOT-fanapp/precache-manifest.985a9e947e2f7b07313349c867af6b02.js",
+    "precache-manifest.bb2b5f4e5cf993da91cc03a1b1eda8a9.js": "/GOT-fanapp/precache-manifest.bb2b5f4e5cf993da91cc03a1b1eda8a9.js",
     "service-worker.js": "/GOT-fanapp/service-worker.js",
     "static/css/2.616f65ab.chunk.css.map": "/GOT-fanapp/static/css/2.616f65ab.chunk.css.map",
     "static/css/main.e84ff4c6.chunk.css.map": "/GOT-fanapp/static/css/main.e84ff4c6.chunk.css.map",
-    "static/js/2.d337a102.chunk.js.LICENSE.txt": "/GOT-fanapp/static/js/2.d337a102.chunk.js.LICENSE.txt",
+    "static/js/2.a25b1942.chunk.js.LICENSE.txt": "/GOT-fanapp/static/js/2.a25b1942.chunk.js.LICENSE.txt",
     "static/media/all.min.css": "/GOT-fanapp/static/media/fa-solid-900.ee09ad75.woff",
     "static/media/got-font.png": "/GOT-fanapp/static/media/got-font.2d81a83e.png",
     "static/media/main.scss": "/GOT-fanapp/static/media/hero.99112041.jpg",
@@ -23,8 +23,8 @@
   "entrypoints": [
     "static/js/runtime-main.a851b28a.js",
     "static/css/2.616f65ab.chunk.css",
-    "static/js/2.d337a102.chunk.js",
+    "static/js/2.a25b1942.chunk.js",
     "static/css/main.e84ff4c6.chunk.css",
-    "static/js/main.30087e14.chunk.js"
+    "static/js/main.c014e52b.chunk.js"
   ]
 }
