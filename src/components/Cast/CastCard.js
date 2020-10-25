@@ -6,7 +6,7 @@ import Loader from "../Loader";
 
 export class CastCard extends Component {
   state = {
-    castInfo: [],
+    castInfo: null,
   };
 
   CancelToken = axios.CancelToken;
@@ -80,6 +80,6 @@ export class CastCard extends Component {
   render() {
     const { castInfo } = this.state;
 
-    return castInfo == false ? <Loader /> : <EachCast casts={castInfo} />;
+    return !castInfo ? <Loader /> : <EachCast casts={castInfo} />;
   }
 }

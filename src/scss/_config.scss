@@ -1,21 +1,7 @@
 $pri-light: #dae0e5;
 $sec-light: #adb5bd;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-@mixin fluid-typography($minFont, $maxFont, $minBkp, $maxBkp) {
+@mixin fontSize($minFont, $maxFont, $minBkp, $maxBkp) {
   $avgFont: ($minFont + $maxFont) / 2;
   font-size: #{$minFont}px;
   @media (min-width: #{$minBkp}px) and (max-width: #{$maxBkp - 1}px) {
@@ -35,4 +21,25 @@ code {
   -moz-transition: 0.5s ease-in-out;
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
+}
+
+@mixin screenSize ($breakpoint) {
+
+  @if $breakpoint==sm-pc{
+    @media only screen and (max-width: 767px){
+      @content;
+    }
+  }
+
+  @if $breakpoint==tablet {
+    @media only screen and (max-width: 691px){
+      @content;
+    }
+  }
+
+  @if $breakpoint==mobile {
+    @media only screen and (max-width: 575px) {
+      @content;
+    }
+  }
 }

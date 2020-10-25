@@ -16,6 +16,12 @@
   margin-top: -5rem;
   &-img {
     width: 325px;
+    @include screenSize(mobile) {
+      width: 200px;
+    }
+    @include screenSize(tablet) {
+      width: 250px;
+    }
   }
   #{&}-card {
     background: transparent;
@@ -44,6 +50,7 @@
     position: absolute;
     bottom: 0;
     right: 50%;
+    font-size: 0.8rem;
     transform: translate(50%, 0);
     &::before {
       content: "" !important;

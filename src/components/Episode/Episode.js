@@ -45,12 +45,12 @@ const Episode = (props) => {
     <div>
       {matchedPath ? (
         <main className="got-bg episode">
-          {episode === null ? (
+          {!episode ? (
             <Loader />
           ) : (
-            <div>
-              <div className="text-left m-4">
-                <Link to="/seasons" className="btn btn-primary back-btn">
+            <div className="container">
+              <div className="text-left">
+                <Link to="/seasons" className="m-0 btn btn-primary back-btn">
                   Back
                 </Link>
               </div>

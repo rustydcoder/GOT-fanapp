@@ -53,8 +53,8 @@ class Home extends Component {
       <header className="header got-bg">
         <div className="overlay">
           <Spring
-            from={{ opacity: 0, marginTop: "-10rem" }}
-            to={{ opacity: 1, marginTop: "-5rem" }}
+            from={{ opacity: 0, marginTop: "-5rem" }}
+            to={{ opacity: 1, marginTop: "0rem" }}
             config={{ delay: 100 }}
           >
             {(props) => (

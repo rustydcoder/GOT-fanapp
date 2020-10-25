@@ -174,3 +174,14 @@
     }
   }
 }
+
+@include screenSize(mobile) {
+  .slick-arrow {
+    &.slick-next {
+      right: 20px;
+    }
+    &.slick-prev{
+      left: 20px;
+    }
+  }
+}

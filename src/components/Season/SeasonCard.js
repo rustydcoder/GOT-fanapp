@@ -7,7 +7,7 @@ import Loader from "../Loader";
 
 export class SeasonCard extends Component {
   state = {
-    season: [],
+    season: null,
     modalId: 0,
   };
 
@@ -73,7 +73,7 @@ export class SeasonCard extends Component {
   render() {
     return (
       <div className="season">
-        {this.state.season == false ? (
+        {!this.state.season ? (
           <Loader />
         ) : (
           <div className="row">

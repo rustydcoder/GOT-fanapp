@@ -23,7 +23,7 @@ const FooterNav = () => (
         </NavLink>
       </li>
       <li className="nav-item">
-        <NavLink className="nav-link" activeClassName="nav-link__active" to="/">
+        <NavLink className="nav-link" activeClassName="nav-link__active" to="/home">
           Home
         </NavLink>
       </li>

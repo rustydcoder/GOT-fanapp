@@ -1,5 +1,6 @@
 .season {
   padding: 6.5rem 0;
+  font-size: 0.9rem;
 
   &-card {
     margin: 0.5rem 0;
@@ -26,6 +27,10 @@ button.btn.btn-primary.season-card__btn {
     top: 26%;
     left: 20%;
     z-index: 999;
+    @include screenSize(tablet) {
+      left: 1%;
+      top: 5%;
+    }
 }
 
 .season-modal{
@@ -34,7 +39,7 @@ button.btn.btn-primary.season-card__btn {
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 9;
+  z-index: 15;
   overflow: hidden;
 
   &_overlay{
@@ -55,5 +60,10 @@ button.btn.btn-primary.season-card__btn {
     border-radius: 12px;
     overflow-y: auto;
     height: 350px;
+
+    @include screenSize(tablet) {
+      width: 90%;
+      height: 300px;
+    }
   }
 }

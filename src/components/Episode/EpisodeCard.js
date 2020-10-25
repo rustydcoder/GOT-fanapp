@@ -10,60 +10,68 @@ const EpisodeCard = (props) => {
   let i = props.episode[index];
 
   return (
-    <div className="container">
-      <div className="episode-card">
-        <div className="card bg-dark text-white">
-          <div className="row no-gutter">
-            <div className="col-auto">
-              <img
-                className="img-fluid"
-                src={i.image.medium}
-                alt={`Season ${i.season} Ep ${i.number}`}
-                width="100%"
-              />
+    <div className="episode-card">
+      <div className="card bg-dark text-white">
+        <div className="row no-gutter">
+          <div className="col-auto grid-display">
+            <img
+              className="img-fluid"
+              src={i.image.medium}
+              alt={`Season ${i.season} Ep ${i.number}`}
+              width="100%"
+            />
 
-              <ul className="episode-card_info">
-                <li>
-                  <strong>Airdate</strong>:
-                  <small>
-                    {" "}
-                    {i.airdate} at {i.airtime}
-                  </small>
-                </li>
-                <li>
-                  <strong>Runtime</strong>:<small> {i.runtime}</small>
-                </li>
-              </ul>
+            <ul className="episode-card_info p-0 m-3">
+              <li>
+                <span>
+                  <strong>Season</strong>:<small> {i.season}</small>
+                </span>
+                <span>
+                  <strong>Episode</strong>:<small> {i.number}</small>
+                </span>
+              </li>
+              <li>
+                <strong>Airdate</strong>:
+                <small>
+                  {" "}
+                  {i.airdate} at {i.airtime}
+                </small>
+              </li>
+              <li>
+                <strong>Runtime</strong>:<small> {i.runtime}</small>
+              </li>
+            </ul>
+
+            <div className="episode-card_btn m-3 text-left">
+              <Link
+                to={`/season${i.season}/episode${i.number - 1}`}
+                onClick={decrement}
+                style={{ display: index === 0 ? "none" : "inline-block" }}
+                className="btn btn-primary my-0"
+              >
+                Prev
+              </Link>
+              <Link
+                to={`/season${i.season}/episode${i.number + 1}`}
+                onClick={increment}
+                style={{
+                  display:
+                    index === props.episode.length - 1
+                      ? "none"
+                      : "inline-block",
+                }}
+                className="btn btn-primary my-0"
+              >
+                Next
+              </Link>
             </div>
-            <div className="col episode-body text-left">
-              <div className="card-body">
-                <h4 className="card-title">{i.name}</h4>
-                <p className="card-text">{i.summary.replace(/<?\Wp>/g, "")}</p>
-
-                <div className="episode-card_btn">
-                  <Link
-                    to={`/season${i.season}/episode${i.number - 1}`}
-                    onClick={decrement}
-                    style={{ display: index === 0 ? "none" : "inline-block" }}
-                    className="btn btn-primary"
-                  >
-                    Prev
-                  </Link>
-                  <Link
-                    to={`/season${i.season}/episode${i.number + 1}`}
-                    onClick={increment}
-                    style={{
-                      display:
-                        index === props.episode.length - 1
-                          ? "none"
-                          : "inline-block",
-                    }}
-                    className="btn btn-primary"
-                  >
-                    Next
-                  </Link>
-                </div>
-              </div>
+          </div>
+          <div className="col episode-body text-left">
+            <div className="card-body">
+              <h4 className="card-title">{i.name}</h4>
+              <p className="card-text">
+                {i.summary.replace(/(<?\Wp>)|(<br>)/g, "")}
+              </p>
             </div>
           </div>
         </div>

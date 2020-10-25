@@ -34,14 +34,35 @@
 =====================================*/
 .navbar-dark {
   background-color: rgba(0, 0, 0, 0.78);
+  &.fixed-top{
+    z-index: 10;
+  }
 }
 
 .navbar-brand__logo {
   width: 60px;
+  @include screenSize(mobile) {
+    width: 40px;
+  }
+  @include screenSize(tablet) {
+    width: 50px;
+  }
 }
 
 .footer {
   padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.78);
+  @include screenSize(tablet) {
+    padding: 0;
+  }
+  &.fixed-bottom{
+    z-index: 9;
+  }
+}
+
+.nav-link__active {
+    background: #007bff;
+    color: #fff;
 }
 
 .wrapper {
@@ -59,4 +80,41 @@
 main{
   height: 100vh;
   width: 100vw;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #111;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include fontSize(13, 17, 480, 1200);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
