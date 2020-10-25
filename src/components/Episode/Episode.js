@@ -21,7 +21,7 @@ const Episode = (props) => {
 
     const loadData = async () => {
       try {
-        let res = await axios.get("http://api.tvmaze.com/shows/82/episodes", {
+        let res = await axios.get("https://api.tvmaze.com/shows/82/episodes", {
           cancelToken: source.token,
         });
         let data = _.filter(res.data, ["season", number]);

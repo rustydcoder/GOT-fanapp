@@ -17,7 +17,7 @@ export class SeasonCard extends Component {
 
   fetchData = async () => {
     try {
-      let result = await axios.get("http://api.tvmaze.com/shows/82/seasons", {
+      let result = await axios.get("https://api.tvmaze.com/shows/82/seasons", {
         cancelToken: this.source.token,
       });
       return result.data;

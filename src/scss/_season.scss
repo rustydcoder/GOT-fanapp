@@ -8,6 +8,9 @@
     &__body {
       padding: 1rem;
       background: rgba(0, 0, 0, 0.68);
+      @include screenSize(tablet) {
+        padding: 0;
+      }
     }
   }
 

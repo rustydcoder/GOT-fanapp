@@ -15,7 +15,7 @@ export class CastCard extends Component {
 
   fetchData = async () => {
     try {
-      let result = await axios.get("http://api.tvmaze.com/shows/82/cast", {
+      let result = await axios.get("https://api.tvmaze.com/shows/82/cast", {
         cancelToken: this.source.token,
       });
       return result.data;
