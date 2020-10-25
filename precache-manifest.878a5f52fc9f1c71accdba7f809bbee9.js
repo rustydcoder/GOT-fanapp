@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c7eda80db36bf598a407ca9255588c0d",
+    "revision": "8c4d5ce074369293c0d6605a532320bd",
     "url": "/GOT-fanapp/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/GOT-fanapp/static/css/2.616f65ab.chunk.css"
   },
   {
-    "revision": "62050804df8c1f444ded",
-    "url": "/GOT-fanapp/static/css/main.e84ff4c6.chunk.css"
+    "revision": "a13a7f4902a31caf8736",
+    "url": "/GOT-fanapp/static/css/main.ebb2d909.chunk.css"
   },
   {
     "revision": "e8f09aa69ff567c06d7f",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/GOT-fanapp/static/js/2.049f0100.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "62050804df8c1f444ded",
+    "revision": "a13a7f4902a31caf8736",
     "url": "/GOT-fanapp/static/js/main.055136cb.chunk.js"
   },
   {

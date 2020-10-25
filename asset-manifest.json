@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/GOT-fanapp/static/css/main.e84ff4c6.chunk.css",
+    "main.css": "/GOT-fanapp/static/css/main.ebb2d909.chunk.css",
     "main.js": "/GOT-fanapp/static/js/main.055136cb.chunk.js",
     "main.js.map": "/GOT-fanapp/static/js/main.055136cb.chunk.js.map",
     "runtime-main.js": "/GOT-fanapp/static/js/runtime-main.a851b28a.js",
@@ -9,10 +9,10 @@
     "static/js/2.049f0100.chunk.js": "/GOT-fanapp/static/js/2.049f0100.chunk.js",
     "static/js/2.049f0100.chunk.js.map": "/GOT-fanapp/static/js/2.049f0100.chunk.js.map",
     "index.html": "/GOT-fanapp/index.html",
-    "precache-manifest.2e463e969873c4a809f78780dd0a6c5a.js": "/GOT-fanapp/precache-manifest.2e463e969873c4a809f78780dd0a6c5a.js",
+    "precache-manifest.878a5f52fc9f1c71accdba7f809bbee9.js": "/GOT-fanapp/precache-manifest.878a5f52fc9f1c71accdba7f809bbee9.js",
     "service-worker.js": "/GOT-fanapp/service-worker.js",
     "static/css/2.616f65ab.chunk.css.map": "/GOT-fanapp/static/css/2.616f65ab.chunk.css.map",
-    "static/css/main.e84ff4c6.chunk.css.map": "/GOT-fanapp/static/css/main.e84ff4c6.chunk.css.map",
+    "static/css/main.ebb2d909.chunk.css.map": "/GOT-fanapp/static/css/main.ebb2d909.chunk.css.map",
     "static/js/2.049f0100.chunk.js.LICENSE.txt": "/GOT-fanapp/static/js/2.049f0100.chunk.js.LICENSE.txt",
     "static/media/all.min.css": "/GOT-fanapp/static/media/fa-solid-900.ee09ad75.woff",
     "static/media/got-font.png": "/GOT-fanapp/static/media/got-font.2d81a83e.png",
@@ -24,7 +24,7 @@
     "static/js/runtime-main.a851b28a.js",
     "static/css/2.616f65ab.chunk.css",
     "static/js/2.049f0100.chunk.js",
-    "static/css/main.e84ff4c6.chunk.css",
+    "static/css/main.ebb2d909.chunk.css",
     "static/js/main.055136cb.chunk.js"
   ]
 }
